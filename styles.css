@@ -28,7 +28,8 @@ main{
 .header__container{
     display: flex;
     justify-content: space-between;
-    gap:7rem;
+    flex-direction: column-reverse;
+    align-items: center;
 }
 
 .header__data{
@@ -63,6 +64,11 @@ main{
 
 .container__icons{
     margin-top: .6rem;
+    text-align: center;
+}
+
+figure{
+    text-align: center;
 }
 
 /*About Section*/
@@ -144,3 +150,17 @@ a:hover{
     padding: .2rem .6rem;
 }
 
+@media (min-width:768px) {
+    .header__container{
+        gap:7rem;
+        flex-direction: row;
+        align-items: unset;
+    }
+    .container__icons{
+        text-align: unset;
+    }
+    figure{
+        text-align: unset;
+    }
+
+}

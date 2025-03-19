@@ -42,15 +42,31 @@ main{
     font-size: 2rem;
 }
 
+figure{
+    text-align: center;
+}
+
+.header__pic{
+    width: 148px;
+    border-radius: 60px;
+}
+
 .header__resume{
     font-size: 1rem;
 }
 
-.header__pic{
-    width: 170px;
-    border-radius: 70px;
+.header__resume::after{
+    content:"";
+    display: inline-flex;
+    width: 20px;
+    aspect-ratio: 4;
+    background: radial-gradient(circle closest-side,#000 90%,#0000) 0/calc(100%/3) 100% space;
+    clip-path: inset(0 100% 0 0);
+    animation: l1 1s steps(4) infinite;
 }
-
+@keyframes l1 {
+to {clip-path: inset(0 -34% 0 0)}
+}
 
 .bold{
     font-weight: 600;
@@ -62,12 +78,10 @@ main{
     gap: .2rem;
 }
 
+
+
 .container__icons{
     margin-top: .6rem;
-    text-align: center;
-}
-
-figure{
     text-align: center;
 }
 
@@ -152,7 +166,7 @@ a:hover{
 
 @media (min-width:768px) {
     .header__container{
-        gap:7rem;
+        gap:5rem;
         flex-direction: row;
         align-items: unset;
     }

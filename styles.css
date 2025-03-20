@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root{
+    --darkMode:#1a1a1d;
+    --lightMode:#d7cfe3;
 
+}
 *{
     margin: 0;
     padding: 0;
@@ -7,8 +11,63 @@
 }
 
 body{
-    font-family: "Space Mono";
+    font-family: "Inter";
+    background-color: white;
+    color: black;
 }
+
+body.darkMode{
+    background-color: var(--darkMode);
+    color: var(--lightMode);
+}
+
+/*LightDarkMode*/
+.container{
+    position: relative;
+}
+.toggle{
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.toggle__right,
+.toggle__left{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    fill:var(--darkModeMode) ;
+}
+body.darkMode .toggle__right,
+body.darkMode .toggle__left{
+    fill: var(--lightMode);
+}
+
+
+.hidden{
+    opacity: 0;
+}
+
+
+.location__icon,
+.header__mail,
+.header__twitter,
+.header__github {
+    fill: var(--darkMode);
+}
+
+body.darkMode .location__icon,
+body.darkMode .header__mail,
+body.darkMode .header__twitter,
+body.darkMode .header__github {
+    fill: var(--lightMode);
+}
+
+
 
 section{
     max-width: 700px;
@@ -56,7 +115,7 @@ figure{
 }
 
 .header__resume::after{
-    content:"";
+    content:" ";
     display: inline-flex;
     width: 20px;
     aspect-ratio: 4;
@@ -64,12 +123,16 @@ figure{
     clip-path: inset(0 100% 0 0);
     animation: l1 1s steps(4) infinite;
 }
+body.darkMode .header__resume::after{
+    background: radial-gradient(circle closest-side,var(--lightMode) 90%,#eaea3100) 0/calc(100%/3) 100% space;
+}
+
 @keyframes l1 {
 to {clip-path: inset(0 -34% 0 0)}
 }
 
 .bold{
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .container__mail,
@@ -82,7 +145,6 @@ to {clip-path: inset(0 -34% 0 0)}
 
 .container__icons{
     margin-top: .6rem;
-    text-align: center;
 }
 
 /*About Section*/
@@ -107,9 +169,15 @@ p{
 
 .important{
     background-color: rgb(111, 124, 224);
-    color: pink;
+    color: rgb(255, 255, 255);
     border-radius: 10px;
     padding: .1rem;
+    
+}
+
+body.darkMode .important{
+    background-color: var(--lightMode);
+    color: var(--darkMode);
 }
 
 /*Proyectos*/
@@ -126,9 +194,14 @@ p{
     padding: 10px;
 }
 
+body.darkMode .project__card{
+    border: 1px solid var(--lightMode);
+}
+
 .project__title{
     margin-bottom: .7rem;
 }
+
 
 .project__paragraph{
     font-size: .9rem;
@@ -139,10 +212,15 @@ a{
     color: black;
 }
 
+body.darkMode a{
+    color: var(--lightMode);
+}
+
 a:hover{
     text-decoration: underline;
     color:rgb(111, 124, 224);
 }
+
 
 /*Habilidades*/
 
@@ -170,9 +248,7 @@ a:hover{
         flex-direction: row;
         align-items: unset;
     }
-    .container__icons{
-        text-align: unset;
-    }
+
     figure{
         text-align: unset;
     }

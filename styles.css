@@ -168,11 +168,13 @@ p{
 }
 
 .important{
+    display: inline-block;
     background-color: rgb(111, 124, 224);
     color: rgb(255, 255, 255);
     border-radius: 10px;
     padding: .1rem;
-    
+    white-space: normal;
+    word-break: break-word;
 }
 
 body.darkMode .important{

@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap');
+
+
 :root{
     --darkMode:#1a1a1d;
     --lightMode:#d7cfe3;
+    --blue:#4354a6;
 
 }
 *{
@@ -12,7 +16,7 @@
 
 body{
     font-family: "Inter";
-    background-color: white;
+    background-color:white;
     color: black;
 }
 
@@ -20,11 +24,11 @@ body.darkMode{
     background-color: var(--darkMode);
     color: var(--lightMode);
 }
-
 /*LightDarkMode*/
 .container{
     position: relative;
 }
+
 .toggle{
     position: absolute;
     right: 0;
@@ -34,6 +38,24 @@ body.darkMode{
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+.underline{
+    position: relative;
+    display: inline-block;
+}
+
+.underline::after{
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-image:url("Assets/Underline_05.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
 .toggle__right,
@@ -47,11 +69,9 @@ body.darkMode .toggle__left{
     fill: var(--lightMode);
 }
 
-
 .hidden{
     opacity: 0;
 }
-
 
 .location__icon,
 .header__mail,
@@ -68,7 +88,6 @@ body.darkMode .header__github {
 }
 
 
-
 section{
     max-width: 700px;
     margin: 0 auto 48px;
@@ -76,13 +95,15 @@ section{
 
 main{
     margin:auto;
-    padding: 4rem;
+    padding: 4rem 4rem 0;
     width: 100%;
 }
+
 
 .section__title{
     margin-bottom: 1rem;
 }
+
 
 .header__container{
     display: flex;
@@ -101,8 +122,22 @@ main{
     font-size: 2rem;
 }
 
-figure{
-    text-align: center;
+.mail{
+    position: relative;
+    display: inline-block;
+}
+
+.mail::after{
+    content: "";
+  position: absolute;
+  bottom: -19px;
+  left: 0;
+  width: 100%;
+  height: 46px; 
+  background-image: url('Assets/underline.svg'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .header__pic{
@@ -148,10 +183,6 @@ to {clip-path: inset(0 -34% 0 0)}
 }
 
 /*About Section*/
-.about{
-    display: flex;
-    flex-direction: column;
-}
 
 .about__title{
     margin-bottom: 1rem;
@@ -164,7 +195,9 @@ p{
 }
 
 .next{
+    font-weight: bold;
     display: inline-flex;
+    
 }
 
 .important{
@@ -182,12 +215,25 @@ body.darkMode .important{
     color: var(--darkMode);
 }
 
+.highlight{
+    clip-path: polygon(-5% 7%, 174% -24%, 87% 93%, 0% 100%);
+    background-color: rgb(111, 124, 224);
+    display: inline-block;
+}
+.highlightPink{
+    clip-path: polygon(0% 0%, 790% -9%, 115% 92%, 75% 100%, 0% 100%);
+    background-color: var(--lightMode);
+    display: inline-block;
+}
+body.darkMode .highlightPink{
+    color:var(--darkMode)
+}
+
 /*Proyectos*/
 .projects__container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
-    margin-inline: -16px;
 }
 
 .project__card{
@@ -223,6 +269,24 @@ a:hover{
     color:rgb(111, 124, 224);
 }
 
+.paragraph{
+    position: relative;
+    display: inline-block;
+}
+
+.paragraph__star::after{
+    content: "";
+    position: relative;
+    display: flex;
+    bottom: 19px;
+    right: -50px;
+    width: 100%;
+    height: 23px;
+    background-image:url("Assets/star.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
 
 /*Habilidades*/
 
@@ -244,15 +308,130 @@ a:hover{
     padding: .2rem .6rem;
 }
 
+.footer{
+    margin: auto;
+    width: 100%;
+    padding: 1rem 4rem 0;
+    text-align: center;
+    height: 50vh;
+}
+
+.footer__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.footer__figure{
+    transform: scaleX(-1);
+    width: 20%;
+}
+
+.footer__text{
+    position: relative;
+    display: inline-block;
+    font-family: "Anton", sans-serif;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+}
+
+.footer__text::after{
+content: "";
+  position: absolute;
+  bottom: -19px;
+  left: 0;
+  width: 100%;
+  height: 13px; 
+  background-image: url('Assets/bluesmile.svg'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+body.darkMode .footer__text::after{
+    background-image: url('Assets/pinksmile.svg');
+}
+
+.footer__img{
+    width: 100%;
+}
+
+.separator{
+    background-image: url('Assets/line.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50px;
+    width: 100%;
+}
+
+.thanks__container{
+    margin-top: 2rem;
+}
+
+.thanks__footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__contact{
+    font-size: 1rem;
+}
+
+.footer__mail{
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+
+/*.footer__contact{
+    position: relative;
+}
+
+.footer__contact::after{
+    content: "";
+    position: absolute;
+    bottom: -19px;
+    left: 63px;
+    width: 100%;
+    height: 32px; 
+    background-image: url('Assets/arrow2.svg'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transform: rotateZ(-92deg);
+}*/
+
+.footer__mail{
+    position: relative;
+}
+
+.footer__mail::after{
+    content: "";
+    position: absolute;
+    bottom: -19px;
+    left: 0;
+    width: 100%;
+    height: 71px; 
+    background-image: url('Assets/circle.svg'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+
 @media (min-width:768px) {
     .header__container{
         gap:5rem;
         flex-direction: row;
         align-items: unset;
     }
-
     figure{
         text-align: unset;
+    }
+    .footer__text{
+        font-size: 4rem;
     }
 
 }

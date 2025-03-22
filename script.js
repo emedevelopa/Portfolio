@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         body.classList.add("darkMode");
         toggleLeft.classList.add("hidden");
         toggleRight.classList.remove("hidden");
+
         
     } else {
         body.classList.remove("darkMode");

@@ -4,10 +4,11 @@
 
 :root{
     --darkMode:#1a1a1d;
-    --lightMode:#d7cfe3;
+    --lightMode:white;
     --blue:#4354a6;
-
+    --pink:#d7cfe3;
 }
+
 *{
     margin: 0;
     padding: 0;
@@ -16,25 +17,24 @@
 
 body{
     font-family: "Inter";
-    background-color:white;
+    background-color:var(--darkMode);
+    color: var(--pink);
+}
+
+body.lightMode{
+    background-color: var(--white);
     color: black;
 }
 
-body.darkMode{
-    background-color: var(--darkMode);
-    color: var(--lightMode);
-}
-/*LightDarkMode*/
+
 .container{
     position: relative;
 }
 
 .toggle{
-    position: absolute;
-    right: 0;
-    width: 40px;
+    width: 100%;
     height: 40px;
-    text-align: center;
+    text-align: end;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -62,11 +62,12 @@ body.darkMode{
 .toggle__left{
     position: absolute;
     transform: translate(-50%, -50%);
-    fill:var(--darkModeMode) ;
+    fill:var(--pink) ;
 }
-body.darkMode .toggle__right,
-body.darkMode .toggle__left{
-    fill: var(--lightMode);
+
+body.lightMode .toggle__right,
+body.lightMode .toggle__left{
+    fill: var(--darkMode);
 }
 
 .hidden{
@@ -77,14 +78,14 @@ body.darkMode .toggle__left{
 .header__mail,
 .header__twitter,
 .header__github {
-    fill: var(--darkMode);
+    fill: var(--pink);
 }
 
-body.darkMode .location__icon,
-body.darkMode .header__mail,
-body.darkMode .header__twitter,
-body.darkMode .header__github {
-    fill: var(--lightMode);
+body.lightMode .location__icon,
+body.lightMode .header__mail,
+body.lightMode .header__twitter,
+body.lightMode .header__github {
+    fill: black;
 }
 
 
@@ -110,6 +111,9 @@ main{
     justify-content: space-between;
     flex-direction: column-reverse;
     align-items: center;
+    border: 15px solid transparent;
+    border-image: url("Assets/marcoheader.svg") 30 stretch;
+    padding: 10px;
 }
 
 .header__data{
@@ -122,23 +126,6 @@ main{
     font-size: 2rem;
 }
 
-.mail{
-    position: relative;
-    display: inline-block;
-}
-
-.mail::after{
-    content: "";
-  position: absolute;
-  bottom: -19px;
-  left: 0;
-  width: 100%;
-  height: 46px; 
-  background-image: url('Assets/underline.svg'); 
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
-}
 
 .header__pic{
     width: 148px;
@@ -154,12 +141,13 @@ main{
     display: inline-flex;
     width: 20px;
     aspect-ratio: 4;
-    background: radial-gradient(circle closest-side,#000 90%,#0000) 0/calc(100%/3) 100% space;
+    background: radial-gradient(circle closest-side,var(--pink) 90%,#0000) 0/calc(100%/3) 100% space;
     clip-path: inset(0 100% 0 0);
     animation: l1 1s steps(4) infinite;
 }
-body.darkMode .header__resume::after{
-    background: radial-gradient(circle closest-side,var(--lightMode) 90%,#eaea3100) 0/calc(100%/3) 100% space;
+
+body.lightMode .header__resume::after{
+    background: radial-gradient(circle closest-side,#000 90%,#eaea3100) 0/calc(100%/3) 100% space;
 }
 
 @keyframes l1 {
@@ -202,30 +190,29 @@ p{
 
 .important{
     display: inline-block;
-    background-color: rgb(111, 124, 224);
-    color: rgb(255, 255, 255);
+    background-color: var(--blue);
+    color: white;
     border-radius: 10px;
     padding: .1rem;
     white-space: normal;
     word-break: break-word;
 }
 
-body.darkMode .important{
-    background-color: var(--lightMode);
-    color: var(--darkMode);
-}
 
 .highlight{
     clip-path: polygon(-5% 7%, 174% -24%, 87% 93%, 0% 100%);
     background-color: rgb(111, 124, 224);
     display: inline-block;
 }
+
 .highlightPink{
     clip-path: polygon(0% 0%, 790% -9%, 115% 92%, 75% 100%, 0% 100%);
-    background-color: var(--lightMode);
+    background-color: var(--pink);
     display: inline-block;
+    color: var(--blue);
 }
-body.darkMode .highlightPink{
+
+body.lightMode .highlightPink{
     color:var(--darkMode)
 }
 
@@ -237,31 +224,47 @@ body.darkMode .highlightPink{
 }
 
 .project__card{
-    border: 1px solid black;
-    border-radius: 10px;
+    border: 15px solid transparent;
+    border-image: url("Assets/marco.svg") 24 stretch;
     padding: 10px;
-}
-
-body.darkMode .project__card{
-    border: 1px solid var(--lightMode);
 }
 
 .project__title{
     margin-bottom: .7rem;
 }
 
-
 .project__paragraph{
     font-size: .9rem;
+    min-height: 70px;
+}
+
+.project__link{
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+    gap: .2rem;
+}
+
+.project__links{
+    display: flex;
+    gap: 2rem;
+}
+
+.project__icon{
+    fill:var(--pink);
+}
+
+body.lightMode .project__icon{
+    fill: black;
 }
 
 a{
     text-decoration: none;
-    color: black;
+    color: var(--pink);
 }
 
-body.darkMode a{
-    color: var(--lightMode);
+body.lightMode a{
+    color: black;
 }
 
 a:hover{
@@ -272,20 +275,6 @@ a:hover{
 .paragraph{
     position: relative;
     display: inline-block;
-}
-
-.paragraph__star::after{
-    content: "";
-    position: relative;
-    display: flex;
-    bottom: 19px;
-    right: -50px;
-    width: 100%;
-    height: 23px;
-    background-image:url("Assets/star.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom;
 }
 
 /*Habilidades*/

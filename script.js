@@ -4,29 +4,28 @@ const toggleLeft = document.querySelector(".toggle__left")
 const body = document.body
 
 document.addEventListener("DOMContentLoaded", () => {
-    const modoActual = localStorage.getItem("theme");
+    const modoActual = localStorage.getItem("theme")
   
-    if (modoActual === "dark") {
-        body.classList.add("darkMode");
-        toggleLeft.classList.add("hidden");
-        toggleRight.classList.remove("hidden");
+    if (modoActual === "light") {
+        body.classList.add("lightMode")
+        toggleLeft.classList.add("hidden")
+        toggleRight.classList.remove("hidden")
 
         
     } else {
-        body.classList.remove("darkMode");
-        toggleLeft.classList.remove("hidden");
-        toggleRight.classList.add("hidden");
+        body.classList.remove("lightMode")
+        toggleLeft.classList.remove("hidden")
+        toggleRight.classList.add("hidden")
         
     }
   });
   
   toggleBtn.addEventListener("click", () => {
-    const isDarkMode = body.classList.toggle("darkMode"); 
+    const isLightMode = body.classList.toggle("lightMode"); 
 
-    // Guarda la preferencia del tema en localStorage
-    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+    localStorage.setItem("theme", isLightMode ? "light" : "dark")
 
-    // Actualiza los iconos del toggle
-    toggleLeft.classList.toggle("hidden", isDarkMode); // Si es oscuro, oculta el sol
-    toggleRight.classList.toggle("hidden", !isDarkMode);
-  });
+    toggleLeft.classList.toggle("hidden", isLightMode)
+    toggleRight.classList.toggle("hidden", !isLightMode)
+  })
+  

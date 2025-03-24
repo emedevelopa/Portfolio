@@ -233,6 +233,17 @@ body.lightMode .highlightPink{
     margin-bottom: .7rem;
 }
 
+.project__title::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-image: url('Assets/underline.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
 .project__paragraph{
     font-size: .9rem;
     min-height: 70px;
@@ -320,7 +331,7 @@ a:hover{
 .footer__text{
     position: relative;
     display: inline-block;
-    font-family: "Anton", sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 2rem;
     margin-bottom: 4rem;
 }
@@ -332,14 +343,14 @@ content: "";
   left: 0;
   width: 100%;
   height: 13px; 
-  background-image: url('Assets/bluesmile.svg'); 
+  background-image: url('Assets/pinksmile.svg'); 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
 }
 
-body.darkMode .footer__text::after{
-    background-image: url('Assets/pinksmile.svg');
+body.lightMode .footer__text::after{
+    background-image: url('Assets/bluesmile.svg');
 }
 
 .footer__img{
@@ -356,7 +367,7 @@ body.darkMode .footer__text::after{
 }
 
 .thanks__container{
-    margin-top: 2rem;
+    margin: 2rem 0;
 }
 
 .thanks__footer{
@@ -399,14 +410,26 @@ body.darkMode .footer__text::after{
 .footer__mail::after{
     content: "";
     position: absolute;
-    bottom: -19px;
-    left: 0;
+    bottom: 6px;
+    right: 115px;
     width: 100%;
-    height: 71px; 
-    background-image: url('Assets/circle.svg'); 
+    height: 28px; 
+    background-image: url('Assets/spark2.svg'); 
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: bottom;
+    transform: scaleX(-1);
+}
+.footer__mail::before{
+    content: "";
+    position: absolute;
+    bottom: 6px;
+    left: 115px;
+    width: 100%;
+    height: 28px; 
+    background-image: url('Assets/spark2.svg'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    
 }
 
 

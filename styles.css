@@ -411,7 +411,7 @@ body.lightMode .footer__text::after{
     content: "";
     position: absolute;
     bottom: 6px;
-    right: 115px;
+    right: 0;
     width: 100%;
     height: 28px; 
     background-image: url('Assets/spark2.svg'); 
@@ -423,7 +423,7 @@ body.lightMode .footer__text::after{
     content: "";
     position: absolute;
     bottom: 6px;
-    left: 115px;
+    left: 0;
     width: 100%;
     height: 28px; 
     background-image: url('Assets/spark2.svg'); 

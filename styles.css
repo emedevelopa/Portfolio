@@ -288,6 +288,52 @@ a:hover{
     display: inline-block;
 }
 
+.op__container{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+.project_op{
+    position: relative;
+}
+
+.project_op::before{
+    content: "";
+    position: absolute;
+    left: -39px;
+    width: 100%;
+    height: 30px;
+    background-image: url('Assets/has.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.op__link{
+    position: relative;
+}
+
+.op__link::after{
+    content: "";
+    position: absolute;
+    bottom: -19px;
+    left: 0;
+    width: 100%;
+    height: 17px; 
+    background-image: url('Assets/undercurl.svg'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.a:visited, a:hover, a:link, a:active {
+    text-decoration: none;
+}
+
+
+.responsive__codepen{
+    margin-top: 2rem;
+}
+
 /*Habilidades*/
 
 .hab__list{
@@ -445,5 +491,6 @@ body.lightMode .footer__text::after{
     .footer__text{
         font-size: 4rem;
     }
+    
 
 }

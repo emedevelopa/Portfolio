@@ -290,6 +290,7 @@ a:hover{
 
 .op__container{
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     align-items: center;
     margin-top: 2rem;
@@ -491,6 +492,7 @@ body.lightMode .footer__text::after{
     .footer__text{
         font-size: 4rem;
     }
-    
-
+    .op__container{
+        flex-direction: row;
+    }
 }

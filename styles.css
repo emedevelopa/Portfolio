@@ -77,14 +77,16 @@ body.lightMode .toggle__left{
 .location__icon,
 .header__mail,
 .header__twitter,
-.header__github {
+.header__github,
+.header__dribbble {
     fill: var(--pink);
 }
 
 body.lightMode .location__icon,
 body.lightMode .header__mail,
 body.lightMode .header__twitter,
-body.lightMode .header__github {
+body.lightMode .header__github,
+body.lightMode .header__dribbble {
     fill: black;
 }
 
